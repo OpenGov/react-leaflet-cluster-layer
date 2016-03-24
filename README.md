@@ -8,7 +8,7 @@ The `ClusterLayer` component takes the following props:
 
 - `markers`: an array of objects that expose the properties defined in the `Marker` type
 - `clusterComponent`: (required) the React component to be rendered for each marker and cluster, this component will receive the following props
-  - `cluster`: a `Marker` or `Cluster` object, as defined by their respective types
+  - `cluster`: a `Cluster` object, as defined by the Cluster Flow type
   - `style`: a style object for positioning
   - `map`: the Leaflet map object from the `react-leaflet` `MapLayer`
   - `...propsForClusters`: the component will also receive the properties of `propsForClusters` as props
