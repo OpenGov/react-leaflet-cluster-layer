@@ -2,6 +2,70 @@
 
 `react-leaflet-cluster-layer` provides a simple `<ClusterLayer />` component for plotting React components as markers and clusters in a `react-leaflet` map.
 
+## Usage
+
+```js
+import React from 'react';
+import { render } from 'react-dom';
+import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
+import ClusterLayer from 'react-leaflet-cluster-layer';
+
+const position = { lng: -122.673447, lat: 45.522558 };
+const markers = [
+  {
+    position: { lng: -122.673447, lat: 45.5225581 },
+    text: 'Voodoo Doughnut',
+  },
+  {
+    position: { lng: -122.6781446, lat: 45.5225512 },
+    text: 'Bailey\'s Taproom',
+  },
+  {
+    position: { lng: -122.67535700000002, lat: 45.5192743 },
+    text: 'Barista'
+  }
+];
+
+class ExampleClusterComponent extends React.Component {
+
+  render() {
+    const style = {
+      border: 'solid 2px darkgrey',
+      borderRadius: '8px',
+      backgroundColor: 'white',
+      padding: '1em',
+      textAlign: 'center'
+    };
+    const cluster = this.props.cluster;
+
+    if (cluster.markers.length == 1) {
+      return (
+        <div style={style} >{cluster.markers[0].text}</div>
+      );
+    }
+
+    return (
+      <div style={style}>{cluster.markers.length} items</div>
+    );
+  }
+
+}
+
+const map = (
+  <Map center={position} zoom={13}>
+    <ClusterLayer
+      markers={markers}
+      clusterComponent={ExampleClusterComponent} />
+    <TileLayer
+      url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
+      attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+    />
+  </Map>
+);
+
+render(map, document.getElementById('app'));
+```
+
 ## API
 
 The `ClusterLayer` component takes the following props:
@@ -15,6 +79,10 @@ The `ClusterLayer` component takes the following props:
 - `propsForClusters`: props to pass on to marker and cluster components
 - `gridSize`: optional prop to control how bounds of clusters expand while being generated (default: 60)
 - `minClusterSize`: optional prop to enforce a minimum cluster size (default: 2)
+
+## Example
+
+To try the example, run `npm run example`.
 
 ## Contributing
 
