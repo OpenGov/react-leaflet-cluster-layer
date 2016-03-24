@@ -1,0 +1,79 @@
+{
+  "name": "react-leaflet-cluster-layer",
+  "version": "0.0.1",
+  "description": "A custom layer for react-leaflet that makes plotting and clustering react components simple",
+  "main": "lib/ClusterLayer.js",
+  "scripts": {
+    "test": "jest",
+    "compile": "npm run clean; npm run transpile",
+    "transpile": "./node_modules/.bin/babel src/ClusterLayer.js --out-file lib/ClusterLayer.js",
+    "clean": "rm -rf ./lib/*"
+  },
+  "keywords": [
+    "react",
+    "leaflet",
+    "cluster",
+    "layer",
+    "map",
+    "maps",
+    "gis",
+    "geo",
+    "geojson",
+    "marker"
+  ],
+  "author": "Jeremiah Hall <npm@jeremiahrhall.com>",
+  "license": "MIT",
+  "peerDependencies": {
+    "leaflet": "^0.7.7",
+    "react-leaflet": "^0.10.2",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7"
+  },
+  "devDependencies": {
+    "leaflet": "^0.7.7",
+    "babel-cli": "^6.6.5",
+    "babel-core": "^6.7.4",
+    "babel-eslint": "^5.0.0",
+    "babel-jest": "^9.0.3",
+    "babel-plugin-object-assign": "^1.2.1",
+    "babel-plugin-react-transform": "^2.0.0",
+    "babel-plugin-transform-proto-to-assign": "^6.4.0",
+    "babel-polyfill": "^6.7.4",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babel-preset-stage-0": "^6.3.13",
+    "enzyme": "^2.2.0",
+    "eslint-config-airbnb": "^6.2.0",
+    "eslint-plugin-arrow-function": "^2.0.0",
+    "eslint-plugin-react": "^4.2.3",
+    "jest-cli": "^0.9.2",
+    "react": "^0.14.7",
+    "react-addons-test-utils": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "react-leaflet": "^0.10.2"
+  },
+  "jest": {
+    "scriptPreprocessor": "<rootDir>/node_modules/babel-jest/src/index.js",
+    "unmockedModulePathPatterns": [
+      "react",
+      "enzyme",
+      "react-dom",
+      "react-addons-test-utils",
+      "fbjs",
+      "cheerio",
+      "htmlparser2",
+      "underscore",
+      "lodash",
+      "domhandler",
+      "object.assign",
+      "define-properties",
+      "function-bind",
+      "object-keys"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "jsx"
+    ]
+  }
+}
