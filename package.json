@@ -54,7 +54,8 @@
     "react-dom": "^0.14.7",
     "react-leaflet": "^0.10.2",
     "react-transform-hmr": "^1.0.4",
-    "webpack-dev-server": "^1.14.1"
+    "webpack-dev-server": "^1.14.1",
+    "webpack": "^1.12.14"
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/node_modules/babel-jest/src/index.js",
@@ -79,8 +80,5 @@
       "json",
       "jsx"
     ]
-  },
-  "dependencies": {
-    "webpack": "^1.12.14"
   }
 }
