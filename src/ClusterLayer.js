@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 import L from 'leaflet';
 import { MapLayer } from 'react-leaflet';
@@ -106,7 +105,7 @@ export default class ClusterLayer extends MapLayer {
   };
 
   componentDidMount(): void {
-    const layerElement = ReactDOM.findDOMNode(this.refs.container);
+    const layerElement = React.findDOMNode(this.refs.container);
     this.props.map.getPanes().overlayPane.appendChild(layerElement);
     this.setClustersWith(this.props.markers);
     this.attachEvents();
