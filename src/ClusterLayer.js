@@ -31,6 +31,16 @@ export type Map = {
   latLngToLayerPoint: (lngLat: LngLat) => Point;
   on: (event: string, handler: () => void) => void;
   getBounds: () => Bounds;
+  getPanes: () => Panes;
+  invalidateSize: () => void;
+}
+
+export type Panes = {
+  overlayPane: Pane;
+}
+
+export type Pane = {
+  appendChild: (element: Object) => void;
 }
 
 export type Cluster = {
