@@ -10,6 +10,10 @@
     "clean": "rm -rf ./lib/*",
     "example": "webpack-dev-server --config ./example/webpack.config.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OpenGov/react-leaflet-cluster-layer.git"
+  },
   "keywords": [
     "react",
     "leaflet",
