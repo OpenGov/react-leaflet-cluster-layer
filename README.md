@@ -2,6 +2,8 @@
 
 `react-leaflet-cluster-layer` provides a simple `<ClusterLayer />` component for plotting React components as markers and clusters in a `react-leaflet` map.
 
+![A screenshot of a cluster on a leaflet map](https://raw.githubusercontent.com/OpenGov/react-leaflet-cluster-layer/master/screenshot.jpg)
+
 ## Usage
 
 ```js
