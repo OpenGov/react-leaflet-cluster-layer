@@ -158,7 +158,7 @@ export default class ClusterLayer extends MapLayer {
 
   updatePosition(): void {
     this.state.clusters.forEach((cluster: Cluster, i) => {
-      const clusterElement = ReactDOM.findDOMNode(
+      const clusterElement = React.findDOMNode(
         this.refs[this.getClusterRefName(i)]
       );
 

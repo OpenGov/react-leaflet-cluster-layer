@@ -1,6 +1,6 @@
 {
   "name": "react-leaflet-cluster-layer",
-  "version": "0.0.1",
+  "version": "0.0.1-react13",
   "description": "A custom layer for react-leaflet that makes plotting and clustering react components simple",
   "main": "lib/ClusterLayer.js",
   "scripts": {
