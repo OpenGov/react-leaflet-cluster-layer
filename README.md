@@ -82,7 +82,12 @@ The `ClusterLayer` component takes the following props:
 
 ## Example
 
-To try the example, run `npm run example`.
+To try the example:
+
+1. Clone this repository
+2. run `npm install` in the root of your cloned repository
+3. run `npm run example`
+4. Visit [localhost:8000](http://localhost:8000)
 
 ## Contributing
 

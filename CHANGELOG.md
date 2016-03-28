@@ -3,3 +3,4 @@
 - Initial implementation of package
 - Updated readme, license filename, added changelog, added contribution guide
 - Added description of technology and language to contribution guide
+- Expanded instructions for running example in README.md
