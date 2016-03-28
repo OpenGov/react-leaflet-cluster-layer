@@ -86,20 +86,10 @@ To try the example, run `npm run example`.
 
 ## Contributing
 
-To contribute, please fork this repository and submit a Pull Request.
-
-You'll need Node version 4.3.0 or newer and NPM 3.3.10 or newer to work with the project. Please ensure that all tests pass when submitting a Pull Request.
-
-Tests for the component are in `lib/__tests__/ClusterLayer.test.js`.
-
-You can run the tests with `npm test`.
-
-## Versioning
-
-This project will follow Semantic Versioning when publishing. This project is still very new so, the API may change rapidly.
+See [CONTRIBUTING.md](https://www.github.com/OpenGov/react-leaflet-cluster-layer/blob/master/CONTRIBUTING.md)
 
 ## License
 
 `react-leaflet-cluster-layer` is MIT licensed.
 
-See `LICENSE` in this repository for the text of this license.
+See [LICENSE.md](https://www.github.com/OpenGov/react-leaflet-cluster-layer/blob/master/LICENSE.md) for details.
