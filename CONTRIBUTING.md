@@ -6,6 +6,10 @@ Things you can do to contribute include:
 2. Suggest a change by [opening an issue](https://www.github.com/OpenGov/react-leaflet-cluster-layer/issues/new)
 3. Fork the repository and fix [an open issue](https://github.com/OpenGov/react-leaflet-cluster-layer/issues)
 
+### Technology
+
+`react-leaflet-cluster-layer` is a custom layer for the `react-leaflet` package. This package is a convenient wrapper around Leaflet, a mapping library, for React. The source code is written with ES6/ES2015 syntax as well as [FlowType](http://flowtype.org) type annotations.
+
 ### Install dependencies
 
 1. Install Node via [nodejs.org](http://nodejs.org)
