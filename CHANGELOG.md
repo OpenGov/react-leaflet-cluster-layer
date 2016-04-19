@@ -1,3 +1,8 @@
+# 0.0.2 Release
+
+- Simplify event responders
+- Fix a bug where clusters got wrong props
+
 # 0.0.1 Release
 
 - Initial implementation of package

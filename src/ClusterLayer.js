@@ -116,8 +116,8 @@ export default class ClusterLayer extends MapLayer {
   };
 
   componentDidMount(): void {
-    const layerElement = ReactDOM.findDOMNode(this.refs.container);
-    this.props.map.getPanes().overlayPane.appendChild(layerElement);
+    this.leafletElement = ReactDOM.findDOMNode(this.refs.container);
+    this.props.map.getPanes().overlayPane.appendChild(this.leafletElement);
     this.setClustersWith(this.props.markers);
     this.attachEvents();
   }
@@ -126,6 +126,10 @@ export default class ClusterLayer extends MapLayer {
     if (!this.props || nextProps.markers !== this.props.markers) {
       this.setClustersWith(nextProps.markers);
     }
+  }
+
+  componentWillUnmount(): void {
+    this.props.map.getPanes().overlayPane.removeChild(this.leafletElement);
   }
 
   componentDidUpdate(): void {
@@ -152,9 +156,6 @@ export default class ClusterLayer extends MapLayer {
     const map: Map = this.props.map;
 
     map.on('viewreset', () => this.recalculate());
-    map.on('moveend', () => this.recalculate());
-    map.on('load', () => this.recalculate());
-    map.on('layeradd', () => this.recalculate());
   }
 
   updatePosition(): void {
