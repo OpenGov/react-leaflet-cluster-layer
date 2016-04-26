@@ -1,3 +1,7 @@
+# 0.0.3 Release
+
+- Correct issue introduced with removal of 'moveend' listener
+
 # 0.0.2 Release
 
 - Simplify event responders

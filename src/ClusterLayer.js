@@ -156,6 +156,7 @@ export default class ClusterLayer extends MapLayer {
     const map: Map = this.props.map;
 
     map.on('viewreset', () => this.recalculate());
+    map.on('moveend', () => this.recalculate());
   }
 
   updatePosition(): void {
