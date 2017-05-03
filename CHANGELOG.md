@@ -1,3 +1,8 @@
+# 0.0.4 Release
+
+- Lib is compatible with React 15
+- Lib is compatible with react-leaflet 1.1
+
 # 0.0.3 Release
 
 - Correct issue introduced with removal of 'moveend' listener
