@@ -116,13 +116,20 @@ export default class ClusterLayer extends MapLayer {
     clusters: []
   };
 
+  map: Object = null;
+
+  constructor(props, context) {
+    super(props, context);
+    this.map = (undefined !== props.map) ? props.map : context.map;
+  }
+
   createLeafletElement(props: Object): Object {
     return null
   }
 
   componentDidMount(): void {
     this.leafletElement = ReactDOM.findDOMNode(this.refs.container);
-    this.context.map.getPanes().overlayPane.appendChild(this.leafletElement);
+    this.map.getPanes().overlayPane.appendChild(this.leafletElement);
     this.setClustersWith(this.props.markers);
     this.attachEvents();
   }
@@ -134,11 +141,11 @@ export default class ClusterLayer extends MapLayer {
   }
 
   componentWillUnmount(): void {
-    this.context.map.getPanes().overlayPane.removeChild(this.leafletElement);
+    this.map.getPanes().overlayPane.removeChild(this.leafletElement);
   }
 
   componentDidUpdate(): void {
-    this.context.map.invalidateSize();
+    this.map.invalidateSize();
     this.updatePosition();
   }
 
@@ -158,7 +165,7 @@ export default class ClusterLayer extends MapLayer {
   }
 
   attachEvents(): void {
-    const map: Map = this.context.map;
+    const map: Map = this.map;
 
     map.on('viewreset', () => this.recalculate());
     map.on('moveend', () => this.recalculate());
@@ -172,7 +179,7 @@ export default class ClusterLayer extends MapLayer {
 
       L.DomUtil.setPosition(
         clusterElement,
-        this.context.map.latLngToLayerPoint(cluster.center)
+        this.map.latLngToLayerPoint(cluster.center)
       );
     });
   }
@@ -199,7 +206,7 @@ export default class ClusterLayer extends MapLayer {
           {...this.props.propsForClusters}
           key={index}
           style={style}
-          map={this.context.map}
+          map={this.map}
           ref={this.getClusterRefName(index)}
           cluster={cluster}
         />
@@ -220,7 +227,7 @@ export default class ClusterLayer extends MapLayer {
 
   calculateClusterBounds(cluster: Cluster) {
     const bounds = L.latLngBounds(cluster.center, cluster.center);
-    cluster.bounds = getExtendedBounds(this.context.map, bounds, this.getGridSize());
+    cluster.bounds = getExtendedBounds(this.map, bounds, this.getGridSize());
   }
 
   isMarkerInClusterBounds(cluster: Cluster, marker: Marker): boolean {
@@ -247,7 +254,7 @@ export default class ClusterLayer extends MapLayer {
   }
 
   createClustersFor(markers: Array<Marker>): Array<Cluster> {
-    const map: Map = this.context.map;
+    const map: Map = this.map;
     const extendedBounds = getExtendedBounds(map, map.getBounds(), this.getGridSize());
     return markers
       .filter(marker => extendedBounds.contains(L.latLng(marker.position)))

@@ -2,7 +2,6 @@
 var webpack = require('webpack');
 
 module.exports = {
-  debug: true,
   devtool: 'source-map',
   entry: {
     app: __dirname + '/index.js'
@@ -12,7 +11,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel',
+        loader: 'babel-loader',
         query: {
           plugins: [
             ['react-transform', {
@@ -38,17 +37,15 @@ module.exports = {
         'NODE_ENV': '"development"'
       }
     }),
-    new webpack.NoErrorsPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
     new webpack.HotModuleReplacementPlugin()
   ],
   devServer: {
-    colors: true,
     contentBase: __dirname,
     historyApiFallback: true,
     hot: true,
     inline: true,
     port: 8000,
-    progress: true,
     stats: {
       cached: false
     }
